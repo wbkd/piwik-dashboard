@@ -76,6 +76,11 @@ gulp.task('images', function(cb) {
     .pipe(gulp.dest(dist + 'images/'));
 });
 
+gulp.task('font-awesome', function() {
+  return gulp.src('node_modules/font-awesome/**')
+    .pipe(gulp.dest(dist + 'css/font-awesome'));
+})
+
 // watch styl, html and js file changes
 gulp.task('watch', function() {
   gulp.watch(app + 'stylus/**/**.styl', ['styles']);
@@ -95,5 +100,5 @@ gulp.task('default', ['build', 'serve', 'watch']);
 
 // waits until clean is finished then builds the project
 gulp.task('build', ['clean'], function(){
-  gulp.start(['images', 'html','scripts','styles']);
+  gulp.start(['images', 'html','scripts','styles', 'font-awesome']);
 });

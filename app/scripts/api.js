@@ -25,7 +25,18 @@ var loadPageData = function(siteId) {
     method: 'Actions.getPageUrls',
     idSite: siteId,
     period: 'day',
-    date: 'today'
+    date: 'yesterday'
+  })
+}
+
+var loadHistoricalData = function(siteId) {
+  return query({
+    method: 'API.get',
+    idSite: siteId,
+    period: 'day',
+    date: '2015-04-29,2015-05-28',
+    filter_limit: false,
+    format_metrics: 1
   })
 }
 
@@ -61,5 +72,6 @@ function getQueryString(params) {
 export default {
   loadSites : loadSites,
   loadLiveData : loadLiveData,
-  loadPageData : loadPageData
+  loadPageData : loadPageData,
+  loadHistoricalData : loadHistoricalData
 }

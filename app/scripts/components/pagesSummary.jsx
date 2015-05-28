@@ -1,6 +1,7 @@
 import React from 'react';
 import Config from '../config';
 import TableRow from './tableRow.jsx';
+import TableHead from './tableHead.jsx';
 
 class PagesSummary extends React.Component {
 
@@ -20,12 +21,10 @@ class PagesSummary extends React.Component {
   }
   
   render() {
-
-    console.log(this.props);
-
     return (
       <div className="pure-u-5-5 pages-summary">
         <div className="table">
+          <TableHead/>
           { this.getTable() }
         </div>
       </div>

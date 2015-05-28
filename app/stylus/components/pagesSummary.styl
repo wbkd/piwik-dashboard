@@ -3,8 +3,23 @@
   padding: 0
   color: #fff
   
-  .table .tr
+  .table .tr, .table .th
     padding: 1em
     border-bottom: 1px solid #37474F
     background: #455A64
     box-sizing: border-box
+    cursor: pointer
+  
+  .table .tr:hover
+    background: darken(#455A64, 3)
+
+  .table .th
+    font-weight: bold
+    //background: #37474f
+    
+  .table .rel
+    position: relative
+    
+  .exit-rate-indicator
+    position: absolute
+    left: 50px

@@ -10,11 +10,9 @@ module.exports.getConfig = function(type) {
     },
     debug : isDev,
     module: {
-      loaders: [{
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      }]
+      loaders: [
+        {test: /\.jsx?$/,exclude: /node_modules/,loader: 'babel-loader'}
+      ]
     }
   };
 

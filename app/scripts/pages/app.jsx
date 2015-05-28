@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../components/header.jsx';
 import PagesSummary from '../components/pagesSummary.jsx';
 import BigNumbers from '../components/bigNumbers.jsx';
+import VisitChart from '../components/visitChart.jsx';
 
 import SiteActions from '../actions/siteActions';
 
@@ -33,6 +34,7 @@ class App extends React.Component {
   }
 
   onDataChange(data) {
+
     this.setState({
       data: data
     });
@@ -43,7 +45,8 @@ class App extends React.Component {
       <div id="app" className="pure-g">
         <Header sites={ this.state.sites } />
         <section className="dashboard pure-u-5-5">
-          <PagesSummary data={ this.state.data.pageData }/>
+          <VisitChart data={ this.state.data.historicalData } />
+          <PagesSummary data={ this.state.data.pageData } />
         </section>
       </div>
     );

@@ -1,6 +1,7 @@
 import Reflux from 'reflux';
 import DataActions from '../actions/dataActions';
 import SiteActions from '../actions/siteActions';
+import d3 from 'd3';
 
 var DataStore = Reflux.createStore({
 
@@ -14,6 +15,7 @@ var DataStore = Reflux.createStore({
     this.listenTo(DataActions.loadData, this.loadData);
     this.listenTo(DataActions.liveDataSuccess, this.liveDataSuccess);
     this.listenTo(DataActions.pageDataSuccess, this.pageDataSuccess);
+    this.listenTo(DataActions.historicalDataSuccess, this.historicalDataSuccess);
   },
 
   changeSite(siteId) {
@@ -36,6 +38,24 @@ var DataStore = Reflux.createStore({
   liveDataSuccess(liveData) {
     this.data.liveData = liveData;
     this.trigger(this.data);
+  },
+
+  historicalDataSuccess(historicalData) {
+    this.data.historicalData = this.converters.historical(historicalData);
+    this.trigger(this.data);
+  },
+
+  converters: {
+    historical: function(input) {
+      var dateParser = d3.time.format("%Y-%m-%d").parse;
+      var output = [];
+      for(var key in input) {
+        var obj = input[key];
+        obj.date = dateParser(key);
+        output.push(obj);
+      }
+      return output;
+    }
   }
 
 });

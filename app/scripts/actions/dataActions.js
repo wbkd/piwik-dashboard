@@ -8,12 +8,16 @@ var DataActions = Reflux.createActions([
   'liveDataError',
 
   'pageDataSuccess',
-  'pageDataError'
+  'pageDataError',
+
+  'historicalDataSuccess',
+  'historicalDataError'
 ]);
 
 DataActions.loadData.preEmit = function(siteId){
-  Api.loadLiveData(siteId).then(DataActions.liveDataSuccess, DataActions.liveDataError);
+  //Api.loadLiveData(siteId).then(DataActions.liveDataSuccess, DataActions.liveDataError);
   Api.loadPageData(siteId).then(DataActions.pageDataSuccess, DataActions.pageDataError);
+  Api.loadHistoricalData(siteId).then(DataActions.historicalDataSuccess, DataActions.historicalDataError);
 };
 
 export default DataActions;
