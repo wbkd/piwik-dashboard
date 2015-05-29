@@ -1,5 +1,6 @@
 import config from './config.js';
 import reqwest from 'reqwest';
+import moment from 'moment';
 
 
 /////////////////
@@ -30,11 +31,13 @@ var loadPageData = function(siteId) {
 }
 
 var loadHistoricalData = function(siteId) {
+  var endDate = moment().format('YYYY-MM-DD');
+
   return query({
     method: 'API.get',
     idSite: siteId,
     period: 'day',
-    date: '2015-04-29,2015-05-28',
+    date: '2015-04-29,' + endDate,
     filter_limit: false,
     format_metrics: 1
   })
