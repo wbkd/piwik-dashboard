@@ -1,6 +1,6 @@
 # Piwik Dashboard
 
-A simple frontend that displays data from the Piwik API.
+A frontend that displays data from the Piwik API.
 
 Todo:
 
