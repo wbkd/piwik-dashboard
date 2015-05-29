@@ -1,6 +1,6 @@
 # Piwik Dashboard
 
-A Piwik Frontend based on ReactJS.
+A simple frontend that displays data from the Piwik API.
 
 Todo:
 
