@@ -4,5 +4,5 @@ A Piwik Frontend based on ReactJS.
 
 Todo:
 
-[ ] Add more charts
-[ ] Add loading states
+* [ ] Add more charts
+* [ ] Add loading states
