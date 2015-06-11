@@ -22,7 +22,6 @@ class Header extends React.Component {
   render() {
     return (
       <header className="pure-u-5-5">
-        <div className="logo">{ Config.siteName }</div>
         <div className="site-select">
           <select onChange={this.siteChange}>{this.getOptions()}</select>
         </div>

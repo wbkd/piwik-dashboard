@@ -23,19 +23,26 @@ class BigNumbers extends React.Component {
     console.log(this.props);
 
     return (
-      <div className="big-numbers pure-u-1-3">
-        <div className="headline">Last 30 Minutes</div>
+      <div className="section big-numbers pure-u-5-5">
 
-        <div className="number-wrapper">
+        <div className="number-wrapper pure-u-1-4">
           <div className="number">{ this.getVisitors() }</div>
           <div className="desc">Unique Visitors</div>
         </div>
-        
-        <div className="seperator"></div>
 
-        <div className="number-wrapper">
-          <div className="number">{ this.getActions() }</div>
-          <div className="desc">Page Actions</div>
+        <div className="number-wrapper pure-u-1-4">
+          <div className="number">{ this.getVisitors() }</div>
+          <div className="desc">Unique Visitors</div>
+        </div>
+
+        <div className="number-wrapper pure-u-1-4">
+          <div className="number">{ this.getVisitors() }</div>
+          <div className="desc">Unique Visitors</div>
+        </div>
+
+        <div className="number-wrapper pure-u-1-4">
+          <div className="number">{ this.getVisitors() }</div>
+          <div className="desc">Unique Visitors</div>
         </div>
       </div>
     );

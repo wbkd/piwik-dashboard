@@ -22,7 +22,7 @@ class PagesSummary extends React.Component {
   
   render() {
     return (
-      <div className="pure-u-5-5 pages-summary">
+      <div className="section pure-u-5-5 pages-summary">
         <div className="table">
           <TableHead/>
           { this.getTable() }

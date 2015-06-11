@@ -46,6 +46,7 @@ class App extends React.Component {
         <Header sites={ this.state.sites } />
         <section className="dashboard pure-u-5-5">
           <VisitChart data={ this.state.data.historicalData } />
+          <BigNumbers data={ this.state.data.liveData } />
           <PagesSummary data={ this.state.data.pageData } />
         </section>
       </div>

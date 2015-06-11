@@ -26,7 +26,7 @@ var loadPageData = function(siteId) {
     method: 'Actions.getPageUrls',
     idSite: siteId,
     period: 'day',
-    date: 'yesterday'
+    date: 'today'
   })
 }
 

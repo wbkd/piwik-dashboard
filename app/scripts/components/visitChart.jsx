@@ -11,7 +11,7 @@ class VisitChart extends React.Component {
     var yExt = d3.extent(this.props.data, function(d) {return d.nb_actions});
 
     var width = window.innerWidth,
-        height = 150;
+        height = 300;
 
     var x = d3.time.scale().range([0,width]).domain(xExt);
     var y = d3.scale.linear().range([height,0]).domain(yExt);
@@ -28,8 +28,6 @@ class VisitChart extends React.Component {
 
     area.y1(function(d) {return y(d.nb_actions)})
     var actions = area(this.props.data);
-
-    console.log(this.props.data);
     
     return (
       <svg height={height} width={width}>
@@ -45,7 +43,7 @@ class VisitChart extends React.Component {
   
   render() {
     return (
-      <div className="pure-u-5-5 visit-chart">
+      <div className="section pure-u-5-5 visit-chart">
         {this.createChart()}
       </div>
     );
