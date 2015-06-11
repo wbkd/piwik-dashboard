@@ -11,7 +11,7 @@ class VisitChart extends React.Component {
     var yExt = d3.extent(this.props.data, function(d) {return d.nb_actions});
 
     var width = window.innerWidth,
-        height = 300;
+        height = 250;
 
     var x = d3.time.scale().range([0,width]).domain(xExt);
     var y = d3.scale.linear().range([height,0]).domain(yExt);

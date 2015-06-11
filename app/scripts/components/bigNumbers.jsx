@@ -5,7 +5,7 @@ class BigNumbers extends React.Component {
   getVisitors() {
     var visitors = 0;
     if(this.props.data) {
-      visitors = this.props.data[0].visitors;
+      visitors = this.props.data[0].visitors * 1354;
     }
     return visitors;
   }
